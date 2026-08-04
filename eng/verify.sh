@@ -27,18 +27,7 @@ for project in "${test_projects[@]}"; do
     -c "$configuration" --no-restore
 done
 
-package_projects=(
-  "$repository_root/dotnet/src/RunicTextResources/RunicTextResources.csproj"
-  "$repository_root/dotnet/src/RunicTextResources.Compiler/RunicTextResources.Compiler.csproj"
-  "$repository_root/dotnet/src/RunicTextResources.Generator/RunicTextResources.Generator.csproj"
-  "$repository_root/dotnet/src/RunicTextResources.Build/RunicTextResources.Build.csproj"
-  "$repository_root/dotnet/tools/RunicTextResources.Tool/RunicTextResources.Tool.csproj"
-)
-
-for project in "${package_projects[@]}"; do
-  dotnet pack "$project" -c "$configuration" --no-restore \
-    -p:PackageVersion="$package_version" -o "$package_feed"
-done
+"$repository_root/eng/pack.sh" "$package_version" "$package_feed"
 
 package_consumer="$repository_root/dotnet/tests/RunicTextResources.PackageTests/RunicTextResources.PackageTests.csproj"
 dotnet restore "$package_consumer" -p:TextResourcesPackageFeed="$package_feed" -p:RestoreLockedMode=false
