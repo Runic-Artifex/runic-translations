@@ -30,7 +30,12 @@ done
 "$repository_root/eng/pack.sh" "$package_version" "$package_feed"
 
 package_consumer="$repository_root/dotnet/tests/RunicTextResources.PackageTests/RunicTextResources.PackageTests.csproj"
-dotnet restore "$package_consumer" -p:TextResourcesPackageFeed="$package_feed" -p:RestoreLockedMode=false
+package_consumer_lock="$artifacts_root/package-consumer.packages.lock.json"
+dotnet restore "$package_consumer" \
+  -p:TextResourcesPackageFeed="$package_feed" \
+  -p:RestorePackagesWithLockFile=true \
+  -p:NuGetLockFilePath="$package_consumer_lock" \
+  -p:RestoreLockedMode=false
 tool_root="$artifacts_root/tool"
 dotnet tool install RunicTextResources.Tool --version "$package_version" \
   --tool-path "$tool_root" \
@@ -42,16 +47,20 @@ dotnet run --project "$package_consumer" -c "$configuration" --no-restore \
   -- --feed "$package_feed"
 
 aot_consumer="$repository_root/dotnet/tests/RunicTextResources.AotTests/RunicTextResources.AotTests.csproj"
-aot_lock="obj/aot.packages.lock.json"
+aot_base_lock="$artifacts_root/aot-base.packages.lock.json"
+aot_lock="$artifacts_root/aot.packages.lock.json"
 runtime_identifier="$(dotnet --info | awk '/ RID:/{print $2; exit}')"
 dotnet restore "$aot_consumer" \
   -p:TextResourcesPackageFeed="$package_feed" \
+  -p:RestorePackagesWithLockFile=true \
+  -p:NuGetLockFilePath="$aot_base_lock" \
   -p:RestoreLockedMode=false
 dotnet restore "$aot_consumer" -r "$runtime_identifier" \
   -p:TextResourcesPackageFeed="$package_feed" \
   -p:PublishAot=true \
   -p:PublishTrimmed=true \
   -p:TrimMode=full \
+  -p:RestorePackagesWithLockFile=true \
   -p:NuGetLockFilePath="$aot_lock" \
   -p:RestoreLockedMode=false
 dotnet publish "$aot_consumer" -c "$configuration" -r "$runtime_identifier" --self-contained true --no-restore \
