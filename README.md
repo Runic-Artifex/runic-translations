@@ -41,7 +41,7 @@ With ESM generation enabled, the same catalog is available to Vite through the o
 ```ts
 import { m } from "virtual:runic-translations/app";
 
-document.querySelector("#app")!.textContent = m.ApplicationName();
+document.querySelector("#app")!.textContent = m["Application.Name"]();
 ```
 
 See the [Vite quick start](https://github.com/Runic-Artifex/runic-translations/blob/main/docs/quickstart-vite.md) for tool pinning, Vite configuration, locale documents, and CI verification.

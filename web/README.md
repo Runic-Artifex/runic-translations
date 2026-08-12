@@ -43,7 +43,7 @@ The optional `compiler` block runs the default project-local command—`dotnet t
 ```ts
 import { m } from "virtual:runic-translations/app";
 
-document.querySelector("#app")!.textContent = m.ApplicationName();
+document.querySelector("#app")!.textContent = m["Application.Name"]();
 
 const greeting = m["Common.Hello"](
   { name: "Ada" },
