@@ -43,14 +43,14 @@ The template pins the runtime, generator, build integration, and local tool to o
 | [`RunicTranslations.Compiler`](https://www.nuget.org/packages/RunicTranslations.Compiler) | Compiler kernel, diagnostics, IR, renderers, and analysis APIs | Tool builders |
 | [`RunicTranslations.Authoring`](https://www.nuget.org/packages/RunicTranslations.Authoring) | Workspace discovery and transactional authoring operations | Editors and authoring tools |
 
-Most applications install the runtime, generator, and build packages together:
+Most applications install the runtime, generator, and build packages together. Replace `<VERSION>` with one exact public preview version in every command:
 
 ```bash
-dotnet add package RunicTranslations --prerelease
-dotnet add package RunicTranslations.Generator --prerelease
-dotnet add package RunicTranslations.Build --prerelease
+dotnet add package RunicTranslations --version <VERSION>
+dotnet add package RunicTranslations.Generator --version <VERSION>
+dotnet add package RunicTranslations.Build --version <VERSION>
 dotnet new tool-manifest
-dotnet tool install RunicTranslations.Tool --prerelease
+dotnet tool install RunicTranslations.Tool --version <VERSION>
 ```
 
 Keep all packages and the local tool on the same exact version. `RunicTranslations.Compiler` and `RunicTranslations.Authoring` are for applications that directly host compilation or edit translation workspaces; ordinary localized applications do not need them.

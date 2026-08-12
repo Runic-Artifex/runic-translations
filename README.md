@@ -48,18 +48,18 @@ See the [Vite quick start](https://github.com/Runic-Artifex/runic-translations/b
 
 ## Choose a package
 
-Runic Translations is currently a public preview. Use `--prerelease` for NuGet installs and the npm `preview` tag, then keep the NuGet package family, local tool, generated artifacts, and Vite adapter on the same exact release.
+Runic Translations is currently a public preview. Replace `<VERSION>` below with the current preview shown on NuGet or npm, and keep the NuGet package family, local tool, generated artifacts, and Vite adapter on that same exact release.
 
 | Package | Install | Choose it when you need |
 |---|---|---|
-| [`RunicTranslations`](https://www.nuget.org/packages/RunicTranslations) | `dotnet add package RunicTranslations --prerelease` | NativeAOT-compatible runtime snapshots, formatting, fallback, and locale switching |
-| [`RunicTranslations.Generator`](https://www.nuget.org/packages/RunicTranslations.Generator) | `dotnet add package RunicTranslations.Generator --prerelease` | Strongly typed C# keys, accessors, catalog data, and registration |
-| [`RunicTranslations.Build`](https://www.nuget.org/packages/RunicTranslations.Build) | `dotnet add package RunicTranslations.Build --prerelease` | MSBuild input mapping and opt-in JSON, TypeScript, ESM, template, or C++ artifacts |
-| [`RunicTranslations.Tool`](https://www.nuget.org/packages/RunicTranslations.Tool) | `dotnet tool install RunicTranslations.Tool --prerelease` | Local initialization, validation, generation, verification, import, schema, and analysis commands |
+| [`RunicTranslations`](https://www.nuget.org/packages/RunicTranslations) | `dotnet add package RunicTranslations --version <VERSION>` | NativeAOT-compatible runtime snapshots, formatting, fallback, and locale switching |
+| [`RunicTranslations.Generator`](https://www.nuget.org/packages/RunicTranslations.Generator) | `dotnet add package RunicTranslations.Generator --version <VERSION>` | Strongly typed C# keys, accessors, catalog data, and registration |
+| [`RunicTranslations.Build`](https://www.nuget.org/packages/RunicTranslations.Build) | `dotnet add package RunicTranslations.Build --version <VERSION>` | MSBuild input mapping and opt-in JSON, TypeScript, ESM, template, or C++ artifacts |
+| [`RunicTranslations.Tool`](https://www.nuget.org/packages/RunicTranslations.Tool) | `dotnet tool install RunicTranslations.Tool --version <VERSION>` | Local initialization, validation, generation, verification, import, schema, and analysis commands |
 | [`RunicTranslations.Templates`](https://www.nuget.org/packages/RunicTranslations.Templates) | `dotnet new install RunicTranslations.Templates::<VERSION>` | Ready-to-build .NET project or catalog item scaffolding |
-| [`RunicTranslations.Compiler`](https://www.nuget.org/packages/RunicTranslations.Compiler) | `dotnet add package RunicTranslations.Compiler --prerelease` | Direct compiler and renderer integration in custom tooling |
-| [`RunicTranslations.Authoring`](https://www.nuget.org/packages/RunicTranslations.Authoring) | `dotnet add package RunicTranslations.Authoring --prerelease` | Safe workspace discovery, project creation, mutation, and editor state |
-| [`@runic-artifex/vite-plugin-runic-translations`](https://www.npmjs.com/package/@runic-artifex/vite-plugin-runic-translations) | `npm install --save-dev @runic-artifex/vite-plugin-runic-translations@preview` | Vite virtual modules, watch integration, and HMR over generated ESM |
+| [`RunicTranslations.Compiler`](https://www.nuget.org/packages/RunicTranslations.Compiler) | `dotnet add package RunicTranslations.Compiler --version <VERSION>` | Direct compiler and renderer integration in custom tooling |
+| [`RunicTranslations.Authoring`](https://www.nuget.org/packages/RunicTranslations.Authoring) | `dotnet add package RunicTranslations.Authoring --version <VERSION>` | Safe workspace discovery, project creation, mutation, and editor state |
+| [`@runic-artifex/vite-plugin-runic-translations`](https://www.npmjs.com/package/@runic-artifex/vite-plugin-runic-translations) | `npm install --save-dev @runic-artifex/vite-plugin-runic-translations@<VERSION>` | Vite virtual modules, watch integration, and HMR over generated ESM |
 
 Most .NET applications use the runtime, generator, and build packages together. Vite applications additionally use the local tool and Vite adapter. Choose the compiler or authoring packages only when building tooling rather than consuming generated translations.
 

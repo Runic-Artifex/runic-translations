@@ -5,10 +5,10 @@ Turn validated translation catalogs into strongly typed C# keys, accessors, comp
 ## Install
 
 ```bash
-dotnet add package RunicTranslations.Generator --prerelease
+dotnet add package RunicTranslations.Generator --version <VERSION>
 ```
 
-The analyzer package and its `RunicTranslations` runtime dependency must use the same exact version. It requires a .NET 10 Roslyn host and is intended for C# projects.
+Replace `<VERSION>` with the current preview shown on NuGet. The analyzer package and its `RunicTranslations` runtime dependency must use the same exact version. It requires a .NET 10 Roslyn host and is intended for C# projects.
 
 ## Add translation inputs
 

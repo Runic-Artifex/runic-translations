@@ -5,12 +5,12 @@ Connect Runic Translations catalogs to MSBuild with simple project items. The pa
 ## Install
 
 ```bash
-dotnet add package RunicTranslations.Build --prerelease
+dotnet add package RunicTranslations.Build --version <VERSION>
 dotnet new tool-manifest
-dotnet tool install RunicTranslations.Tool --prerelease
+dotnet tool install RunicTranslations.Tool --version <VERSION>
 ```
 
-The package targets .NET 10 and contains only MSBuild props and targets: it ships no task assembly and takes no `Microsoft.Build` package dependency. Keep it, `RunicTranslations.Tool`, `RunicTranslations.Generator`, and `RunicTranslations` on the same exact version.
+Replace `<VERSION>` with the current preview shown on NuGet. The package targets .NET 10 and contains only MSBuild props and targets: it ships no task assembly and takes no `Microsoft.Build` package dependency. Keep it, `RunicTranslations.Tool`, `RunicTranslations.Generator`, and `RunicTranslations` on the same exact version.
 
 ## Configure a project
 

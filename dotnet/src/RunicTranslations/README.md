@@ -5,10 +5,10 @@ Run compiled translations in .NET applications with immutable locale snapshots, 
 ## Install
 
 ```bash
-dotnet add package RunicTranslations --prerelease
+dotnet add package RunicTranslations --version <VERSION>
 ```
 
-The package targets .NET 10. For generated catalogs, install `RunicTranslations.Generator` at the same exact version; add `RunicTranslations.Build` when you want its catalog item mapping or non-C# artifacts.
+Replace `<VERSION>` with the current preview shown on NuGet. The package targets .NET 10. For generated catalogs, install `RunicTranslations.Generator` at the same exact version; add `RunicTranslations.Build` when you want its catalog item mapping or non-C# artifacts.
 
 ## Use a generated catalog
 

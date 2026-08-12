@@ -5,10 +5,10 @@ Compile Runic Translations catalogs inside your own .NET tooling. The compiler a
 ## Install
 
 ```bash
-dotnet add package RunicTranslations.Compiler --prerelease
+dotnet add package RunicTranslations.Compiler --version <VERSION>
 ```
 
-The package targets .NET 10 and has no UI-framework dependency.
+Replace `<VERSION>` with the current preview shown on NuGet. The package targets .NET 10 and has no UI-framework dependency.
 
 ## Compile a catalog
 

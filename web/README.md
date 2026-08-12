@@ -5,10 +5,10 @@ Import generated Runic Translations messages through stable Vite virtual modules
 ## Install
 
 ```bash
-npm install --save-dev @runic-artifex/vite-plugin-runic-translations@preview
+npm install --save-dev @runic-artifex/vite-plugin-runic-translations@<VERSION>
 ```
 
-The public package is a preview and supports Vite 6, 7, and 8. A Vite application and generated `web-module-manifest-v1.json` are required. If the plugin owns generation, install `RunicTranslations.Tool` in a project-local .NET 10 tool manifest and keep it on the same exact release.
+Replace `<VERSION>` with the current public preview shown on npm. The package supports Vite 6, 7, and 8. A Vite application and generated `web-module-manifest-v1.json` are required. If the plugin owns generation, install `RunicTranslations.Tool` in a project-local .NET 10 tool manifest at that same exact release.
 
 ## Configure Vite
 

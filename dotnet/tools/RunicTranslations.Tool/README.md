@@ -6,10 +6,10 @@ Create, validate, generate, verify, import, and analyze Runic Translations catal
 
 ```bash
 dotnet new tool-manifest
-dotnet tool install RunicTranslations.Tool --prerelease
+dotnet tool install RunicTranslations.Tool --version <VERSION>
 ```
 
-The tool targets .NET 10. Commit `.config/dotnet-tools.json`, restore it with `dotnet tool restore`, and keep the tool on the same exact release as the runtime, generator, build package, and Vite adapter.
+Replace `<VERSION>` with the current preview shown on NuGet. The tool targets .NET 10. Commit `.config/dotnet-tools.json`, restore it with `dotnet tool restore`, and keep the tool on the same exact release as the runtime, generator, build package, and Vite adapter.
 
 ## Create and validate a catalog
 

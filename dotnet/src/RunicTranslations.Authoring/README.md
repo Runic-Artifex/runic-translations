@@ -5,10 +5,10 @@ Build editors and workspace tools on supported Runic Translations project creati
 ## Install
 
 ```bash
-dotnet add package RunicTranslations.Authoring --prerelease
+dotnet add package RunicTranslations.Authoring --version <VERSION>
 ```
 
-The package targets .NET 10 and depends on the matching `RunicTranslations.Compiler` package.
+Replace `<VERSION>` with the current preview shown on NuGet. The package targets .NET 10 and depends on the matching `RunicTranslations.Compiler` package.
 
 ## Create a validated project
 
